@@ -4,57 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Card of the Week</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet">
+
   <style>
-    :root {
-      --ink: #1a1a1a;
-      --muted: #6b6b6b;
-      --accent: #c8102e;
-    }
     body {
-      font-family: system-ui, -apple-system, sans-serif;
-      color: var(--ink);
-      max-width: 38rem;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
+      font-family: "Press Start 2P", monospace;
+      background: #212529;
+      color: #fff;
+      margin: 0;
+      padding: 2rem 1rem 4rem;
+      line-height: 1.8;
+      font-size: 12px;
+    }
+
+    .wrap { max-width: 62rem; margin: 0 auto; }
+
+    .page-title {
+      text-align: center;
+      font-size: 1.4rem;
       line-height: 1.6;
+      margin: 1rem 0 3rem;
     }
-    .label {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.75rem;
-      color: var(--muted);
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.5rem;
     }
-    h1 {
-      font-size: clamp(2rem, 6vw, 3rem);
-      margin: 0.25rem 0 2rem;
-      line-height: 1.1;
+
+    .card-img {
+      width: 100%;
+      height: auto;
+      image-rendering: pixelated;
+      display: block;
+      margin-bottom: 1.5rem;
     }
-    .set {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-top: -1.5rem;
-      margin-bottom: 2rem;
+
+    .meta {
+      font-size: 10px;
+      color: #adafbc;
+      margin: 0 0 1rem;
     }
+
+    .note { font-size: 10px; line-height: 2; }
+
     .price {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin: 2rem 0 0.25rem;
-    }
-    .price-note {
-      font-size: 0.8rem;
-      color: var(--muted);
+      font-size: 1.1rem;
+      margin: 1.5rem 0 0.5rem;
     }
   </style>
 </head>
 <body>
-  <p class="label">Card of the week</p>
-  <h1>Charizard</h1>
-  <p class="set">Base Set · 1999 · Holo Rare</p>
+  <div class="wrap">
 
-  <p>Why this one: the card that turned a schoolyard hobby into a market. Still the benchmark everyone prices against.</p>
+    <h1 class="page-title">Card of the Week</h1>
 
-  <p class="price">$1,240</p>
-  <p class="price-note">Ungraded, updated manually — 2 Aug 2026</p>
+    <div class="grid">
+
+      <div class="nes-container is-dark with-title">
+        <p class="title">Charizard</p>
+
+        <img
+          class="card-img"
+          src="https://images.pokemontcg.io/base1/4_hires.png"
+          alt="Charizard, Base Set 1999">
+
+        <p class="meta">Base Set &middot; 1999 &middot; Holo Rare</p>
+
+        <p class="note">
+          The card that turned a schoolyard hobby into a market.
+          Still the benchmark everyone prices against.
+        </p>
+
+        <p class="price nes-text is-warning">$1,240</p>
+        <p class="meta">Ungraded &middot; updated manually</p>
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>
