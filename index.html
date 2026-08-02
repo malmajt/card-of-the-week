@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Card of the Week</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --muted: #6b6b6b;
+      --accent: #c8102e;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      max-width: 38rem;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      line-height: 1.6;
+    }
+    .label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin: 0.25rem 0 2rem;
+      line-height: 1.1;
+    }
+    .set {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: -1.5rem;
+      margin-bottom: 2rem;
+    }
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 2rem 0 0.25rem;
+    }
+    .price-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <p class="label">Card of the week</p>
+  <h1>Charizard</h1>
+  <p class="set">Base Set · 1999 · Holo Rare</p>
+
+  <p>Why this one: the card that turned a schoolyard hobby into a market. Still the benchmark everyone prices against.</p>
+
+  <p class="price">$1,240</p>
+  <p class="price-note">Ungraded, updated manually — 2 Aug 2026</p>
+</body>
+</html>
