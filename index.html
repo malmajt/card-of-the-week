@@ -9,10 +9,22 @@
   <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet">
 
   <style>
+    :root {
+      --bg: #212529;
+      --ink: #ffffff;
+      --muted: #adafbc;
+    }
+
+    body.light {
+      --bg: #f0f0f0;
+      --ink: #212529;
+      --muted: #6b6b6b;
+    }
+
     body {
       font-family: "Press Start 2P", monospace;
-      background: #212529;
-      color: #fff;
+      background: var(--bg);
+      color: var(--ink);
       margin: 0;
       padding: 2rem 1rem 4rem;
       line-height: 1.8;
@@ -25,7 +37,12 @@
       text-align: center;
       font-size: 1.4rem;
       line-height: 1.6;
-      margin: 1rem 0 3rem;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .toolbar {
+      text-align: center;
+      margin-bottom: 3rem;
     }
 
     .grid {
@@ -44,7 +61,7 @@
 
     .meta {
       font-size: 10px;
-      color: #adafbc;
+      color: var(--muted);
       margin: 0 0 1rem;
     }
 
@@ -60,6 +77,10 @@
   <div class="wrap">
 
     <h1 class="page-title">Card of the Week</h1>
+
+    <div class="toolbar">
+      <button type="button" id="theme-toggle" class="nes-btn">Light / Dark</button>
+    </div>
 
     <div class="grid">
 
@@ -103,5 +124,17 @@
 
     </div>
   </div>
+
+  <script>
+    const button = document.querySelector("#theme-toggle");
+    const containers = document.querySelectorAll(".nes-container");
+
+    button.addEventListener("click", function () {
+      document.body.classList.toggle("light");
+      containers.forEach(function (box) {
+        box.classList.toggle("is-dark");
+      });
+    });
+  </script>
 </body>
 </html>
